@@ -1,10 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using TurnosMedicos.Data;
+using TurnosMedicos.Services;
+using TurnosMedicos.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=turnos.db"));
+
+builder.Services.AddScoped<ITurnosService, TurnosService>();
+builder.Services.AddScoped<IPacientesService, PacientesService>();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
@@ -21,7 +26,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.AllowAnyOrigin()
+        policy.WithOrigins(builder.Configuration.GetSection("AllowedOrigins").Get<string[]>()!)
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -35,8 +40,11 @@ using (var scope = app.Services.CreateScope())
     db.Database.EnsureCreated();
 }
 
-app.UseSwagger();
-app.UseSwaggerUI();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseCors();
 app.MapControllers();

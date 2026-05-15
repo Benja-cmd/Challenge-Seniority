@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TurnosMedicos.Data;
 using TurnosMedicos.Models;
+using TurnosMedicos.Services.Interfaces;
 
 namespace TurnosMedicos.Controllers;
 
@@ -9,24 +8,24 @@ namespace TurnosMedicos.Controllers;
 [Route("[controller]")]
 public class PacientesController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly IPacientesService _pacientesService;
 
-    public PacientesController(AppDbContext context)
+    public PacientesController(IPacientesService pacientesService)
     {
-        _context = context;
+        _pacientesService = pacientesService;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var pacientes = await _context.Pacientes.ToListAsync();
+        var pacientes = await _pacientesService.GetAllAsync();
         return Ok(pacientes);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var paciente = await _context.Pacientes.FindAsync(id);
+        var paciente = await _pacientesService.GetByIdAsync(id);
         if (paciente == null) return NotFound();
         return Ok(paciente);
     }
@@ -34,36 +33,46 @@ public class PacientesController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] Paciente paciente)
     {
-        paciente.createdAt = DateTime.UtcNow;
-        paciente.isActive = true;
-        _context.Pacientes.Add(paciente);
-        await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetById), new { id = paciente.Id }, paciente);
+        try
+        {
+            var created = await _pacientesService.CreateAsync(paciente);
+            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { mensaje = ex.Message });
+        }
     }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] Paciente paciente)
     {
-        var existing = await _context.Pacientes.FindAsync(id);
-        if (existing == null) return NotFound();
-
-        existing.NombreCompleto = paciente.NombreCompleto;
-        existing.DNI = paciente.DNI;
-        existing.Email = paciente.Email;
-        existing.Telefono = paciente.Telefono;
-
-        await _context.SaveChangesAsync();
-        return Ok(existing);
+        try
+        {
+            var updated = await _pacientesService.UpdateAsync(id, paciente);
+            return Ok(updated);
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(new { mensaje = ex.Message });
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { mensaje = ex.Message });
+        }
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var paciente = await _context.Pacientes.FindAsync(id);
-        if (paciente == null) return NotFound();
-
-        _context.Pacientes.Remove(paciente);
-        await _context.SaveChangesAsync();
-        return NoContent();
+        try
+        {
+            await _pacientesService.DeleteAsync(id);
+            return NoContent();
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(new { mensaje = ex.Message });
+        }
     }
 }

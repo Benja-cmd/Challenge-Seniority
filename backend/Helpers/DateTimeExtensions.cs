@@ -2,8 +2,13 @@ namespace TurnosMedicos.Helpers;
 
 public static class DateTimeExtensions
 {
-    public static bool IsWithinCancellationWindow(this DateTime fechaTurno)
+    public static bool IsPasado(this DateTime fechaTurno)
     {
-        return (fechaTurno - DateTime.Now).TotalHours <= 24;
+        return fechaTurno < DateTime.UtcNow;
+    }
+
+    public static bool EsCancelacionTardia(this DateTime fechaTurno)
+    {
+        return (fechaTurno - DateTime.UtcNow).TotalHours < 24;
     }
 }
