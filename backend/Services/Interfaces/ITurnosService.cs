@@ -1,13 +1,14 @@
-﻿using TurnosMedicos.Models;
+﻿using TurnosMedicos.DTOs.Requests;
+using TurnosMedicos.DTOs.Responses;
 
 namespace TurnosMedicos.Services.Interfaces;
 
 public interface ITurnosService
 {
-    Task<List<Turno>> GetAllAsync();
-    Task<Turno?> GetByIdAsync(int id);
-    Task<Turno> CrearTurnoAsync(Turno turno);
-    Task<Turno> CancelarTurnoAsync(int id);
-    Task<Turno> MarcarAusenciaAsync(int id);
-    Task<Turno> ActualizarEstadoAsync(int id, EstadoTurno nuevoEstado);
+    Task<List<TurnoResponse>> GetAllAsync();
+    Task<TurnoResponse?> GetByIdAsync(int id);
+    Task<TurnoResponse> CrearTurnoAsync(CrearTurnoRequest request);
+    Task<TurnoResponse> CancelarTurnoAsync(int id);
+    Task<TurnoResponse> MarcarAusenciaAsync(int id);
+    Task<TurnoResponse> ActualizarEstadoAsync(int id, ActualizarEstadoRequest request);
 }

@@ -3,12 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\controllers\\turnoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:controllers\\turnoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\dtos\\responses\\pacienteresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:dtos\\responses\\pacienteresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\controllers\\pacientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:controllers\\pacientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\services\\pacienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:services\\pacienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\dtos\\responses\\turnoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:dtos\\responses\\turnoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\services\\turnosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:services\\turnosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\services\\interfaces\\ipacientesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:services\\interfaces\\ipacientesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\services\\interfaces\\iturnosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:services\\interfaces\\iturnosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\dtos\\requests\\actualizarpacienterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:dtos\\requests\\actualizarpacienterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\dtos\\requests\\crearpacienterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:dtos\\requests\\crearpacienterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\dtos\\requests\\crearturnorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:dtos\\requests\\crearturnorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\dtos\\requests\\actualizarestadorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:dtos\\requests\\actualizarestadorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,28 +59,12 @@
       "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\controllers\\pacientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:controllers\\pacientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\controllers\\sucursalescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:controllers\\sucursalescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\controllers\\medicoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:controllers\\medicoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\controllers\\turnoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:controllers\\turnoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\services\\interfaces\\ipacientesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:services\\interfaces\\ipacientesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\services\\interfaces\\iturnosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|solutionrelative:services\\interfaces\\iturnosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{27241159-3112-F5C9-3552-985FF251E14A}|TurnosMedicos.csproj|c:\\users\\benja\\downloads\\codigo-challenge-net\\challenge-net\\backend\\models\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,11 +94,98 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "TurnosController.cs",
+              "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Controllers\\TurnosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TurnosController.cs",
+              "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Controllers\\TurnosController.cs",
+              "RelativeToolTip": "Controllers\\TurnosController.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAwwF0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T18:59:40Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PacienteResponse.cs",
+              "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Responses\\PacienteResponse.cs",
+              "RelativeDocumentMoniker": "DTOs\\Responses\\PacienteResponse.cs",
+              "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Responses\\PacienteResponse.cs",
+              "RelativeToolTip": "DTOs\\Responses\\PacienteResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T13:57:42.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TurnoResponse.cs",
+              "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Responses\\TurnoResponse.cs",
+              "RelativeDocumentMoniker": "DTOs\\Responses\\TurnoResponse.cs",
+              "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Responses\\TurnoResponse.cs",
+              "RelativeToolTip": "DTOs\\Responses\\TurnoResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T13:57:15.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ActualizarPacienteRequest.cs",
+              "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Requests\\ActualizarPacienteRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\Requests\\ActualizarPacienteRequest.cs",
+              "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Requests\\ActualizarPacienteRequest.cs",
+              "RelativeToolTip": "DTOs\\Requests\\ActualizarPacienteRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T13:56:21.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CrearPacienteRequest.cs",
+              "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Requests\\CrearPacienteRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\Requests\\CrearPacienteRequest.cs",
+              "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Requests\\CrearPacienteRequest.cs",
+              "RelativeToolTip": "DTOs\\Requests\\CrearPacienteRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T13:55:58.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ActualizarEstadoRequest.cs",
+              "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Requests\\ActualizarEstadoRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\Requests\\ActualizarEstadoRequest.cs",
+              "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Requests\\ActualizarEstadoRequest.cs",
+              "RelativeToolTip": "DTOs\\Requests\\ActualizarEstadoRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T13:54:29.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CrearTurnoRequest.cs",
+              "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Requests\\CrearTurnoRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\Requests\\CrearTurnoRequest.cs",
+              "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\DTOs\\Requests\\CrearTurnoRequest.cs",
+              "RelativeToolTip": "DTOs\\Requests\\CrearTurnoRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T13:53:41.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
@@ -86,56 +197,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "PacienteService.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Services\\PacienteService.cs",
               "RelativeDocumentMoniker": "Services\\PacienteService.cs",
               "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Services\\PacienteService.cs",
               "RelativeToolTip": "Services\\PacienteService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAwwGIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T19:45:13.096Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-15T19:45:13.096Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "IPacientesService.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Services\\Interfaces\\IPacientesService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IPacientesService.cs",
               "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Services\\Interfaces\\IPacientesService.cs",
               "RelativeToolTip": "Services\\Interfaces\\IPacientesService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-15T19:44:44.081Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "TurnosService.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Services\\TurnosService.cs",
               "RelativeDocumentMoniker": "Services\\TurnosService.cs",
               "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Services\\TurnosService.cs",
               "RelativeToolTip": "Services\\TurnosService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-15T19:44:03.506Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "ITurnosService.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Services\\Interfaces\\ITurnosService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\ITurnosService.cs",
               "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Services\\Interfaces\\ITurnosService.cs",
               "RelativeToolTip": "Services\\Interfaces\\ITurnosService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-15T19:43:20.537Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "DateTimeExtensions.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Helpers\\DateTimeExtensions.cs",
               "RelativeDocumentMoniker": "Helpers\\DateTimeExtensions.cs",
@@ -147,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -159,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -171,19 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TurnosController.cs",
-              "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Controllers\\TurnosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TurnosController.cs",
-              "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Controllers\\TurnosController.cs",
-              "RelativeToolTip": "Controllers\\TurnosController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T18:59:40Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "SucursalesController.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Controllers\\SucursalesController.cs",
               "RelativeDocumentMoniker": "Controllers\\SucursalesController.cs",
@@ -195,19 +293,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "PacientesController.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Controllers\\PacientesController.cs",
               "RelativeDocumentMoniker": "Controllers\\PacientesController.cs",
               "ToolTip": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Controllers\\PacientesController.cs",
               "RelativeToolTip": "Controllers\\PacientesController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAowEUAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T18:59:36.769Z"
+              "WhenOpened": "2026-05-15T18:59:36.769Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "Turno.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Models\\Turno.cs",
               "RelativeDocumentMoniker": "Models\\Turno.cs",
@@ -219,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "Paciente.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Models\\Paciente.cs",
               "RelativeDocumentMoniker": "Models\\Paciente.cs",
@@ -231,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "EstadoTurno.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Models\\EstadoTurno.cs",
               "RelativeDocumentMoniker": "Models\\EstadoTurno.cs",
@@ -243,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "MedicosController.cs",
               "DocumentMoniker": "C:\\Users\\benja\\Downloads\\codigo-challenge-net\\challenge-net\\backend\\Controllers\\MedicosController.cs",
               "RelativeDocumentMoniker": "Controllers\\MedicosController.cs",

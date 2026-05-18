@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using TurnosMedicos.Models;
+using TurnosMedicos.DTOs.Requests;
 using TurnosMedicos.Services.Interfaces;
 
 namespace TurnosMedicos.Controllers;
@@ -31,11 +31,11 @@ public class TurnosController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CrearTurno([FromBody] Turno turno)
+    public async Task<IActionResult> CrearTurno([FromBody] CrearTurnoRequest request)
     {
         try
         {
-            var created = await _turnosService.CrearTurnoAsync(turno);
+            var created = await _turnosService.CrearTurnoAsync(request);
             return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
         }
         catch (KeyNotFoundException ex)
@@ -89,7 +89,7 @@ public class TurnosController : ControllerBase
     {
         try
         {
-            var turno = await _turnosService.ActualizarEstadoAsync(id, request.Estado);
+            var turno = await _turnosService.ActualizarEstadoAsync(id, request);
             return Ok(turno);
         }
         catch (KeyNotFoundException ex)
@@ -101,9 +101,4 @@ public class TurnosController : ControllerBase
             return BadRequest(new { mensaje = ex.Message });
         }
     }
-}
-
-public class ActualizarEstadoRequest
-{
-    public EstadoTurno Estado { get; set; }
 }

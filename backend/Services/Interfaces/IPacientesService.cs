@@ -1,12 +1,13 @@
-﻿using TurnosMedicos.Models;
+﻿using TurnosMedicos.DTOs.Requests;
+using TurnosMedicos.DTOs.Responses;
 
 namespace TurnosMedicos.Services.Interfaces;
 
 public interface IPacientesService
 {
-    Task<List<Paciente>> GetAllAsync();
-    Task<Paciente?> GetByIdAsync(int id);
-    Task<Paciente> CreateAsync(Paciente paciente);
-    Task<Paciente> UpdateAsync(int id, Paciente paciente);
+    Task<List<PacienteResponse>> GetAllAsync();
+    Task<PacienteResponse?> GetByIdAsync(int id);
+    Task<PacienteResponse> CreateAsync(CrearPacienteRequest request);
+    Task<PacienteResponse> UpdateAsync(int id, ActualizarPacienteRequest request);
     Task DeleteAsync(int id);
 }

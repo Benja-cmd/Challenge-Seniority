@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TurnosMedicos.Data;
+using TurnosMedicos.DTOs.Requests;
+using TurnosMedicos.DTOs.Responses;
 using TurnosMedicos.Helpers;
 using TurnosMedicos.Models;
 using TurnosMedicos.Services.Interfaces;
@@ -15,27 +17,43 @@ public class TurnosService : ITurnosService
         _context = context;
     }
 
-    public async Task<List<Turno>> GetAllAsync()
+    private static TurnoResponse MapToResponse(Turno t) => new()
     {
-        return await _context.Turnos
+        Id = t.Id,
+        PacienteId = t.PacienteId,
+        PacienteNombre = t.Paciente?.NombreCompleto ?? string.Empty,
+        MedicoId = t.MedicoId,
+        MedicoNombre = t.Medico?.NombreCompleto ?? string.Empty,
+        MedicoEspecialidad = t.Medico?.Especialidad ?? string.Empty,
+        FechaHora = t.FechaHora,
+        Estado = t.Estado,
+        FechaCreacion = t.FechaCreacion,
+        FechaCancelacion = t.FechaCancelacion,
+        Motivo = t.Motivo,
+    };
+
+    public async Task<List<TurnoResponse>> GetAllAsync()
+    {
+        var turnos = await _context.Turnos
             .Include(t => t.Paciente)
             .Include(t => t.Medico)
             .ToListAsync();
+        return turnos.Select(MapToResponse).ToList();
     }
 
-    public async Task<Turno?> GetByIdAsync(int id)
+    public async Task<TurnoResponse?> GetByIdAsync(int id)
     {
-        return await _context.Turnos
+        var turno = await _context.Turnos
             .Include(t => t.Paciente)
             .Include(t => t.Medico)
             .FirstOrDefaultAsync(t => t.Id == id);
+        return turno == null ? null : MapToResponse(turno);
     }
 
-    public async Task<Turno> CrearTurnoAsync(Turno turno)
+    public async Task<TurnoResponse> CrearTurnoAsync(CrearTurnoRequest request)
     {
-        var paciente = await _context.Pacientes.FindAsync(turno.PacienteId);
-        if (paciente == null)
-            throw new KeyNotFoundException("Paciente no encontrado.");
+        var paciente = await _context.Pacientes.FindAsync(request.PacienteId)
+            ?? throw new KeyNotFoundException("Paciente no encontrado.");
 
         if (!paciente.IsActive)
             throw new InvalidOperationException("El paciente no se encuentra activo.");
@@ -50,28 +68,40 @@ public class TurnosService : ITurnosService
             paciente.NoShowCount = 0;
         }
 
-        var medicoExiste = await _context.Medicos.AnyAsync(m => m.Id == turno.MedicoId);
-        if (!medicoExiste)
-            throw new KeyNotFoundException("Médico no encontrado.");
+        var medico = await _context.Medicos.FindAsync(request.MedicoId)
+            ?? throw new KeyNotFoundException("Médico no encontrado.");
 
         var turnoConflicto = await _context.Turnos.AnyAsync(t =>
-            t.MedicoId == turno.MedicoId &&
-            t.FechaHora == turno.FechaHora &&
+            t.MedicoId == request.MedicoId &&
+            t.FechaHora == request.FechaHora &&
             t.Estado != EstadoTurno.Cancelado);
         if (turnoConflicto)
             throw new InvalidOperationException("El médico ya tiene un turno en ese horario.");
 
-        turno.FechaCreacion = DateTime.UtcNow;
-        turno.Estado = EstadoTurno.Pendiente;
+        var turno = new Turno
+        {
+            PacienteId = request.PacienteId,
+            MedicoId = request.MedicoId,
+            FechaHora = request.FechaHora,
+            Motivo = request.Motivo,
+            FechaCreacion = DateTime.UtcNow,
+            Estado = EstadoTurno.Pendiente,
+        };
+
         _context.Turnos.Add(turno);
         await _context.SaveChangesAsync();
-        return turno;
+
+        turno.Paciente = paciente;
+        turno.Medico = medico;
+
+        return MapToResponse(turno);
     }
 
-    public async Task<Turno> CancelarTurnoAsync(int id)
+    public async Task<TurnoResponse> CancelarTurnoAsync(int id)
     {
         var turno = await _context.Turnos
             .Include(t => t.Paciente)
+            .Include(t => t.Medico)
             .FirstOrDefaultAsync(t => t.Id == id)
             ?? throw new KeyNotFoundException("Turno no encontrado.");
 
@@ -100,13 +130,14 @@ public class TurnosService : ITurnosService
         }
 
         await _context.SaveChangesAsync();
-        return turno;
+        return MapToResponse(turno);
     }
 
-    public async Task<Turno> MarcarAusenciaAsync(int id)
+    public async Task<TurnoResponse> MarcarAusenciaAsync(int id)
     {
         var turno = await _context.Turnos
             .Include(t => t.Paciente)
+            .Include(t => t.Medico)
             .FirstOrDefaultAsync(t => t.Id == id)
             ?? throw new KeyNotFoundException("Turno no encontrado.");
 
@@ -129,12 +160,15 @@ public class TurnosService : ITurnosService
         }
 
         await _context.SaveChangesAsync();
-        return turno;
+        return MapToResponse(turno);
     }
 
-    public async Task<Turno> ActualizarEstadoAsync(int id, EstadoTurno nuevoEstado)
+    public async Task<TurnoResponse> ActualizarEstadoAsync(int id, ActualizarEstadoRequest request)
     {
-        var turno = await _context.Turnos.FindAsync(id)
+        var turno = await _context.Turnos
+            .Include(t => t.Paciente)
+            .Include(t => t.Medico)
+            .FirstOrDefaultAsync(t => t.Id == id)
             ?? throw new KeyNotFoundException("Turno no encontrado.");
 
         var transicionesValidas = new Dictionary<EstadoTurno, List<EstadoTurno>>
@@ -146,11 +180,11 @@ public class TurnosService : ITurnosService
             { EstadoTurno.NoShow,     new List<EstadoTurno>() },
         };
 
-        if (!transicionesValidas[turno.Estado].Contains(nuevoEstado))
-            throw new InvalidOperationException($"No se puede pasar de '{turno.Estado}' a '{nuevoEstado}'.");
+        if (!transicionesValidas[turno.Estado].Contains(request.Estado))
+            throw new InvalidOperationException($"No se puede pasar de '{turno.Estado}' a '{request.Estado}'.");
 
-        turno.Estado = nuevoEstado;
+        turno.Estado = request.Estado;
         await _context.SaveChangesAsync();
-        return turno;
+        return MapToResponse(turno);
     }
 }

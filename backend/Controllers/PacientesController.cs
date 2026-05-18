@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using TurnosMedicos.Models;
+using TurnosMedicos.DTOs.Requests;
 using TurnosMedicos.Services.Interfaces;
 
 namespace TurnosMedicos.Controllers;
@@ -31,11 +31,11 @@ public class PacientesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] Paciente paciente)
+    public async Task<IActionResult> Create([FromBody] CrearPacienteRequest request)
     {
         try
         {
-            var created = await _pacientesService.CreateAsync(paciente);
+            var created = await _pacientesService.CreateAsync(request);
             return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
         }
         catch (InvalidOperationException ex)
@@ -45,11 +45,11 @@ public class PacientesController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] Paciente paciente)
+    public async Task<IActionResult> Update(int id, [FromBody] ActualizarPacienteRequest request)
     {
         try
         {
-            var updated = await _pacientesService.UpdateAsync(id, paciente);
+            var updated = await _pacientesService.UpdateAsync(id, request);
             return Ok(updated);
         }
         catch (KeyNotFoundException ex)
