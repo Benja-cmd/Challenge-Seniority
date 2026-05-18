@@ -17,9 +17,9 @@
       <tbody>
         <tr v-for="turno in turnos" :key="turno.id">
           <td>{{ turno.id }}</td>
-          <td>{{ turno.paciente?.nombreCompleto }}</td>
-          <td>{{ turno.medico?.nombreCompleto }}</td>
-          <td>{{ turno.medico?.especialidad }}</td>
+          <td>{{ turno.pacienteNombre }}</td>
+          <td>{{ turno.medicoNombre }}</td>
+          <td>{{ turno.medicoEspecialidad }}</td>
           <td>{{ formatFecha(turno.fechaHora) }}</td>
           <td>
             <span :class="['badge', `badge-${turno.estado?.toLowerCase()}`]">{{ turno.estado }}</span>
@@ -27,7 +27,12 @@
           <td>{{ turno.motivo }}</td>
           <td>
             <router-link :to="`/turnos/${turno.id}`">Ver</router-link>
-            <button class="btn-danger" style="margin-left: 8px" @click="cancelar(turno.id)">Cancelar</button>
+            <button
+              class="btn-danger"
+              style="margin-left: 8px"
+              @click="cancelar(turno.id)"
+              :disabled="!puedeCancelar(turno.estado)"
+            >Cancelar</button>
           </td>
         </tr>
       </tbody>
@@ -51,15 +56,25 @@ export default {
       const res = await turnosApi.getAll()
       this.turnos = res.data
     } catch {
-      alert('Error al procesar la solicitud')
+      alert('Error al cargar los turnos.')
     }
   },
   methods: {
     formatFecha(fecha) {
       return new Date(fecha).toLocaleString('es-AR')
     },
+    puedeCancelar(estado) {
+      return estado === 'Pendiente' || estado === 'Confirmado'
+    },
     async cancelar(id) {
-      await turnosApi.cancelar(id)
+      if (!confirm('¿Confirmás la cancelación del turno?')) return
+      try {
+        const res = await turnosApi.cancelar(id)
+        const index = this.turnos.findIndex(t => t.id === id)
+        if (index !== -1) this.turnos[index] = res.data
+      } catch (err) {
+        alert(err.response?.data?.mensaje || 'Error al cancelar el turno.')
+      }
     }
   }
 }
@@ -72,9 +87,9 @@ export default {
   font-size: 12px;
   font-weight: 600;
 }
-.badge-pendiente   { background: #fff3cd; color: #856404; }
-.badge-confirmado  { background: #d4edda; color: #155724; }
-.badge-cancelado   { background: #f8d7da; color: #721c24; }
-.badge-atendido    { background: #d1ecf1; color: #0c5460; }
-.badge-noshow      { background: #e2e3e5; color: #383d41; }
+.badge-pendiente  { background: #fff3cd; color: #856404; }
+.badge-confirmado { background: #d4edda; color: #155724; }
+.badge-cancelado  { background: #f8d7da; color: #721c24; }
+.badge-atendido   { background: #d1ecf1; color: #0c5460; }
+.badge-noshow     { background: #e2e3e5; color: #383d41; }
 </style>

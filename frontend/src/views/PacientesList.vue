@@ -27,7 +27,10 @@
             <span v-else style="color: #388e3c">No</span>
           </td>
           <td>
-            <button class="btn-danger" @click="eliminar(p.id)">Eliminar</button>
+            <button
+              class="btn-danger"
+              @click="eliminar(p.id)"
+            >Eliminar</button>
           </td>
         </tr>
       </tbody>
@@ -51,16 +54,17 @@ export default {
       const res = await pacientesApi.getAll()
       this.pacientes = res.data
     } catch {
-      alert('Error al procesar la solicitud')
+      alert('Error al cargar los pacientes.')
     }
   },
   methods: {
     async eliminar(id) {
+      if (!confirm('¿Confirmás que querés eliminar este paciente?')) return
       try {
         await pacientesApi.delete(id)
         this.pacientes = this.pacientes.filter(p => p.id !== id)
-      } catch {
-        alert('Error al procesar la solicitud')
+      } catch (err) {
+        alert(err.response?.data?.mensaje || 'Error al eliminar el paciente.')
       }
     }
   }
